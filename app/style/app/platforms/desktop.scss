@@ -45,16 +45,30 @@ h3 {
 	
 }
 
-h1 {
+h1,
+h2,
+h3 {
     
     font-size: $headline-size;
-    font-weight: $sans-serif-light;
     line-height: $headline-leading;
     margin-bottom: 0.5em;
     
 }
 
-h1, h2, h3, h4, h5, h6 {
+h4, 
+h5, 
+h6 {
+    
+    font-family: $sans-serif, sans-serif;
+    
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
     
     max-width: $headline-max-width;
     width: 40%;
@@ -65,7 +79,13 @@ h1, h2, h3, h4, h5, h6 {
 /***** !copy ******/
 /******************/
 
-p, thead, tfoot, tbody, li, td, small {
+p, 
+thead, 
+tfoot, 
+tbody, 
+li, 
+td, 
+small {
 
     line-height: $copy-leading;
     margin-bottom: 1em;
@@ -83,7 +103,8 @@ small {
 /***** !lists ******/
 /*******************/
 
-ul, ol {
+ul, 
+ol {
     
     margin: 0;
     padding: 0;
@@ -109,7 +130,8 @@ a {
 /***** !bold ******/
 /******************/
 
-b, strong {
+b, 
+strong {
     
     font-weight: $sans-serif-bold;
     
@@ -131,19 +153,4 @@ button:focus {
 	
 }
 
-/**************************/
-/***** !font awesome ******/
-/**************************/
-
-/* close butotn */
-button[class*="fa"] {
-    
-    border: 0 none;
-    
-}
-
 /******************************* !CUSTOM *******************************/
-
-body > div > div > div {
-    width: 80vw;
-}

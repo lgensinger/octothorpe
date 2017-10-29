@@ -9,8 +9,7 @@
 /* --- !type sizes
 /* !FONTS
 /* --- !slabo 27px
-/* !GLOBALS
-/* --- !headers
+/* --- !roboto
 
 /******************************* !SASS VARIABLES *******************************/
 
@@ -18,7 +17,7 @@
 /***** !sans-serif ******/
 /************************/
 
-$sans-serif: "Lato";
+$sans-serif: "Roboto";
 $sans-serif-black: 700;
 $sans-serif-bold: 700;
 $sans-serif-regular: 400;
@@ -108,6 +107,10 @@ $button-jumbo: $headline-size;
     src: url("../../../../node_modules/typeface-slabo-27px/files/slabo-27px-latin-400.woff2") format("woff2");
     
 }
+
+/********************/
+/***** !roboto ******/
+/********************/
 
 /* light */
 /*@font-face {
