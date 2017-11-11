@@ -1,0 +1,29 @@
+version: "3"
+  
+
+services:
+
+  web:
+    container_name: octothorpe.desktop
+    build:
+      context: .
+      dockerfile: Dockerfile.build
+    image: octothorpe.build
+    volumes:
+      - ./app:/app
+      - ./package.json:/package.json:ro
+      - dist:/dist
+    command: bash -c "npm install && webpack -p --config config/webpack.config.prod.js"
+
+  host:
+    image: nginx
+    depends_on:
+      - web
+    volumes:
+      - dist:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    command: "nginx -g 'daemon off;'"
+
+volumes:
+  dist:

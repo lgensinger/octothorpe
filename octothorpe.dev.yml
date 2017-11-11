@@ -1,0 +1,17 @@
+version: "3"
+  
+
+services:
+
+  web:
+    container_name: octothorpe.dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: octothorpe.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/app
+      - ./package.json:/package.json:ro
+    command: bash -c "npm install && node scripts/start-min.js"

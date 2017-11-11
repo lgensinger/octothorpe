@@ -12,7 +12,7 @@ var WebpackDevServer = require('webpack-dev-server');
 var historyApiFallback = require('connect-history-api-fallback');
 var httpProxyMiddleware = require('http-proxy-middleware');
 var detect = require('detect-port');
-var config = require('../config/webpack.config.style.dev');
+var config = require('../config/webpack.config.dev');
 var package = require('../package.json');
 
 // Tools like Cloud9 rely on this.

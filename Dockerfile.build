@@ -20,10 +20,5 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install webpack -g
 
 # copy needed directories into container
-ADD . /
-
-# install needed node modules
-RUN npm install
-
-# compile JS, CSS, HTML using webpack
-RUN webpack -p --config app/config/webpack.config.prod.js
+ADD ./app/style /style
+ADD ./config /config

@@ -20,7 +20,10 @@ var extractThemeLight = new ExtractTextPlugin("static/css/[name]-light.[contenth
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: {
-        app: "./app/app.js"
+        app: [
+			"./style/app.js",
+			"./app/app.js"
+		]
     },
     output: {
         path: resolveApp("dist"),

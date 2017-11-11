@@ -1,6 +1,15 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var path = require('path');
+var fs = require('fs');
+
+// Make sure any symlinks in the project folder are resolved:
+// https://github.com/facebookincubator/create-react-angularjs/issues/637
+var appDirectory = fs.realpathSync(process.cwd());
+function resolveApp(relativePath) {
+  return path.resolve(appDirectory, relativePath);
+}
 
 // CSS
 var extractCSS = new ExtractTextPlugin("static/css/[name].[contenthash:8].css");
@@ -14,33 +23,40 @@ module.exports = {
         app: [
 			"./style/app.js",
 			"./app/app.js"
-		]
+		],
+        vendor: [
+            "moment"
+        ]
     },
     output: {
-        path: __dirname + "/app",
+        path: resolveApp("dist"),
         filename: "static/js/[name].[chunkhash:8].js",
-        chunkFilename: "static/js/[name].[chunkhash:8].chunk.js",
-        publicPath: '/'
+        chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
+        publicPath: ""
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env']
+                        presets: ['env', 'react']
                     }
                 }
             },
             {
                 test: /\.js$/, // include .js files
-                enforce: "pre", // preload the jshint loader
+                enforce: "pre", // preload the eslint loader
                 exclude: /node_modules/, // exclude any and all files in the node_modules folder
                 use: [
                     {
-                        loader: "jshint-loader"
+                        loader: "eslint-loader",
+                        options: {
+                            failOnWarning: false,
+                            failOnError: true
+                        }
                     }
                 ]
             },
@@ -94,14 +110,14 @@ module.exports = {
                     loader: "url-loader?limit=100000"
                 ,//}],
                 query: {
-                    name: "static/media/[name].[hash:8].[ext]"
+                    name: 'static/media/[name].[hash:8].[ext]'
                 }
             },
             {
                 test: /\.ttf$/,
                 loader: "file-loader",
                 query: {
-                    name: "static/media/[name].[hash:8].[ext]"
+                    name: 'static/media/[name].[hash:8].[ext]'
                 }
             },
             {
@@ -122,7 +138,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
            inject: true,
-           template: './app/index.html'
+           template: "./app/index.html"
         }),
         extractCSS,
         extractSASS,

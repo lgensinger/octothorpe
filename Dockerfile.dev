@@ -1,0 +1,10 @@
+# use an official node runtime as parent image
+FROM node
+
+# copy needed directories into container
+ADD ./app/style /style
+ADD ./config /config
+ADD ./scripts /scripts
+
+# make port 3000 available to the world outside this container
+EXPOSE 3000

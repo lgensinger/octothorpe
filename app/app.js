@@ -34,7 +34,7 @@ require("./app-frontend-config");
 // app initialized
 var app = window.app = (function(app) {
     app.init = function() {
-        // modules
+        // init other stuff if needed
     };
     return app;
 }(app || {}));
