@@ -7,9 +7,6 @@
 /* --- !sans-serif
 /* --- !serif
 /* --- !type sizes
-/* !FONTS
-/* --- !slabo 27px
-/* --- !roboto
 
 /******************************* !SASS VARIABLES *******************************/
 
@@ -91,53 +88,3 @@ $table-header: 0.9em;
 $button-regular: $copy-mid-size;
 $button-large: $copy-large-size;
 $button-jumbo: $headline-size;
-
-/****************************** FONTS ******************************/
-
-/*******************/
-/***** !slabo ******/
-/*******************/
-
-/* regular */
-@font-face {
-    
-    font-family: $serif;
-    font-style: normal;
-    font-weight: $serif-regular;
-    src: url("../../../../node_modules/typeface-slabo-27px/files/slabo-27px-latin-400.woff2") format("woff2");
-    
-}
-
-/********************/
-/***** !roboto ******/
-/********************/
-
-/* light */
-@font-face {
-    
-    font-family: $sans-serif;
-    font-style: normal;
-    font-weight: $sans-serif-light;
-    src: url("../../../../node_modules/roboto-fontface/fonts/roboto-condensed/Roboto-Condensed-Light.woff2") format("woff2");
-    
-}
-
-/* italic */
-@font-face {
-    
-    font-family: $sans-serif;
-    font-style: italic;
-    font-weight: $sans-serif-regular;
-    src: url("../../../../node_modules/roboto-fontface/fonts/roboto-condensed/Roboto-Condensed-RegularItalic.woff2") format("woff2");
-    
-}
-
-/* bold */
-@font-face {
-    
-    font-family: $sans-serif;
-    font-style: normal;
-    font-weight: $sans-serif-bold;
-    src: url("../../../../node_modules/roboto-fontface/fonts/roboto-condensed/Roboto-Condensed-Bold.woff2") format("woff2");
-    
-}
