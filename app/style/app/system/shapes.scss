@@ -34,7 +34,7 @@ $tile-small-width: calc(20% - #{$copy-gutter-quarter});
 /******************************* !VISUALS *******************************/
 
 /* inset size */
-$inset-visual-height: 600px;
+$inset-visual-height: 300px;
 $inset-visual-height-inline: 50px;
 $inset-visual-width: 400px;
 
@@ -48,6 +48,7 @@ $inset-search-width-min: 300px;
 /******************************* !LINE WORK *******************************/
 
 /* line weights */
+$line-extra-thin: 0.5px;
 $line-thin: 1px;
 $line-regular: 2px;
 $line-thick: 3px;
