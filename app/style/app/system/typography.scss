@@ -99,7 +99,7 @@ $button-jumbo: $headline-size;
 /*******************/
 
 /* regular */
-/*@font-face {
+@font-face {
     
     font-family: $serif;
     font-style: normal;
@@ -113,7 +113,7 @@ $button-jumbo: $headline-size;
 /********************/
 
 /* light */
-/*@font-face {
+@font-face {
     
     font-family: $sans-serif;
     font-style: normal;
@@ -123,7 +123,7 @@ $button-jumbo: $headline-size;
 }
 
 /* italic */
-/*@font-face {
+@font-face {
     
     font-family: $sans-serif;
     font-style: italic;
@@ -133,11 +133,11 @@ $button-jumbo: $headline-size;
 }
 
 /* bold */
-/*@font-face {
+@font-face {
     
     font-family: $sans-serif;
     font-style: normal;
     font-weight: $sans-serif-bold;
     src: url("../../../../node_modules/roboto-fontface/fonts/roboto-condensed/Roboto-Condensed-Bold.woff2") format("woff2");
     
-}*/
+}
